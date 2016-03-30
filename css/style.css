@@ -1,18 +1,20 @@
-(function($){
-	$(document).ready(function(){
-		function sticky_relocate() {
-			var window_top = $(window).scrollTop();
-			var div_top = $('#menu-one').offset().top;
-			if (window_top > div_top) {
-				$('#sticky').addClass('stick');
-			} else {
-				$('#sticky').removeClass('stick');
-			}
-		}
-
-		$(function () {
-			$(window).scroll(sticky_relocate);
-			sticky_relocate();
-		});
-	})   
-})(jQuery)
+#sticky {
+    padding: 0.5ex;
+    width: 600px;
+    background-color: #333;
+    color: #fff;
+    font-size: 2em;
+    border-radius: 0.5ex;
+}
+#sticky.stick {
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    border-radius: 0 0 0.5em 0.5em;
+}
+body {
+    margin: 1em;
+}
+p {
+    margin: 1em auto;
+}
